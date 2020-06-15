@@ -10,7 +10,7 @@ node{
 }
 def assignVariable(){
     def cname_map = [:]
-    cname_map = cname_subdomain_list
+    cname_map = "${cname_subdomain_list}"
     print cname_map
 
 }
