@@ -3,15 +3,13 @@ node{
       git credentialsId: 'jenkins_git', url: 'git@github.com:Devpokhariya/temporary.git'
     }
     stage("change the variable"){
-        def cname_subdomain_list = "${cname_subdomain_list}".split(',')
-      
-        def final_cname_subdomain_list = []
-        for ( i=0 ; i<cname_subdomain_list.size(); i++ ){
-       final_cname_subdomain_list.add(cname_subdomain_list[i])
-        }
-       sh """sed -e 's/cname_domain_list/${cname_subdomain_list}/' main.tf """
+        cname_subdomain_list = "${cname_subdomain_list}".split(',')
+        sh """sed -e 's/cname_domain_value_list/${cname_subdomain_list}/' main.tf """
     }
 }
 def assignVariable(){
-    print ("tset")
+    def cname_map = [:]
+    cname_map = cname_subdomain_list
+    print cname_map
+
 }
