@@ -4,7 +4,8 @@ node{
     }
     stage("change the variable"){
         cname_subdomain_list = "${cname_subdomain_list}".split(',')
-        sh """sed -e 's/cname_domain_value_list/${cname_subdomain_list}/' main.tf """
+        //sh """sed -e 's/cname_domain_value_list/${cname_subdomain_list}/' main.tf """
+        assignVariable()
     }
 }
 def assignVariable(){
