@@ -3,7 +3,7 @@ node{
       git credentialsId: 'jenkins_git', url: 'git@github.com:Devpokhariya/temporary.git'
     }
     stage("change the variable"){
-         cname_subdomain_list = "${cname_subdomain_list}".split(',')
+        cname_subdomain_list = "${cname_subdomain_list}".split(',')
         print cname_subdomain_list
         def final_cname_subdomain_list = []
         for ( i=0 ; i<cname_subdomain_list.size(); i++ ){
