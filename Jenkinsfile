@@ -4,7 +4,7 @@ node{
     }
     stage("change the variable"){
          cname_subdomain_list = "${cname_subdomain_list}".split(',')
-        print (cname_subdomain_list)
+        print cname_subdomain_list
         def final_cname_subdomain_list = []
         for ( i=0 ; i<cname_subdomain_list.size(); i++ ){
        final_cname_subdomain_list.add(cname_subdomain_list[i])
