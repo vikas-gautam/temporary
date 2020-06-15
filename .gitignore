@@ -1,0 +1,6 @@
+*.sh
+*.terraform
+*.tfstate
+*.backup
+*.txt
+
