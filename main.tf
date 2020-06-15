@@ -34,7 +34,7 @@ module "paytm_bank_dns" {
   domain               = "paytm.com"
   organization         = "paytmbank"
   a_subdomain_list     = []
-  cname_subdomain_list = [cname_subdomain_list[0],cname_subdomain_list[1]]
+  cname_subdomain_list = $cname_subdomain_list
 
   a_subdomain_map = {
   }

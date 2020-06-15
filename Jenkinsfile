@@ -9,7 +9,7 @@ node{
         for ( i=0 ; i<cname_subdomain_list.size(); i++ ){
        final_cname_subdomain_list.add(cname_subdomain_list[i])
         }
-       print (final_cname_subdomain_list)
+       sed -i /s/$cname_subdomain_list/final_cname_subdomain_list/ main.tf 
     }
 }
 def assignVariable(){
