@@ -3,7 +3,6 @@ provider "aws" {
   version = "~> 2.63"
 }
 
-
 module "paytm_bank_dns" {
   source               = "./route53"
   domain               = "paytm.com"
@@ -12,12 +11,11 @@ module "paytm_bank_dns" {
   cname_subdomain_list = cname_domain_value_list
 
   a_subdomain_map = { 
-    "www" =  "www.paytm.com",
-    "abc" = "abc.paytm.com"
+   
    }
 
   cname_subdomain_map = {
-   
-    
+    "www" =  "www.google.com",
+    "abc" = "abc.google.com"
   }
 }
