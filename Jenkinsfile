@@ -17,7 +17,11 @@ def assignVariable(){
     }
     map_string = ""
     for (i=0;i<cname_map.size();i++){
-    map_string += cname_map[i]+","
+         if (hasComma){ 
+        print ","; 
+    }
+    map_string += cname_map[i]
+    hasComma = true
     }
     sh """sed -e 's/cname_map_value/${map_string}/' main.tf 
         terraform fmt main.tf
