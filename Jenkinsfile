@@ -7,21 +7,15 @@ node{
         //sh """sed -e 's/cname_domain_value_list/${cname_subdomain_list}/' main.tf """
         cname_subdomain_map = "${cname_subdomain_map}".split(',')
 
-        assignVariable()
+        assignVariableToMap()
     }
 }
-def assignVariable(){
-    def cname_map = []
+def assignVariableToMap(){
+    def cname_map = ""
     for (i=0;i<cname_subdomain_list.size();i++){
     cname_map += cname_subdomain_list[i] + "=" + cname_subdomain_map[i]
     }
-    String map_string = cname_map.join(",")
-    
-    // for (i=0;i<cname_map.size();i++){
-    // map_string += cname_map[i] + ","
-    // }
-    sh """sed -e 's/cname_map_value/${map_string}/' main.tf """
-
-    
-
+    print cname_map
+    //String map_string = cname_map.join(",")
+    //sh """sed -e 's/cname_map_value/${map_string}/' main.tf """
 }
