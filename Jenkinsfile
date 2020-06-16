@@ -15,6 +15,7 @@ def assignVariable(){
     for (i=0;i<cname_subdomain_list.size();i++){
     cname_map += cname_subdomain_list[i] + "=" + cname_subdomain_map[i]
     }
+    map_string = ""
     for (i=0;i<cname_map.size();i++){
     def map_string = cname_map[i]
     }
