@@ -15,14 +15,10 @@ def assignVariable(){
     for (i=0;i<cname_subdomain_list.size();i++){
     cname_map += cname_subdomain_list[i] + "=" + cname_subdomain_map[i]
     }
-    map_string = ""
-    for (i=0;i<cname_map.size();i++){
-         if (hasComma){ 
-        print ","; 
-    }
-    map_string += cname_map[i]
-    hasComma = true
-    }
+    map_string = cname_map.toString()
+    // for (i=0;i<cname_map.size();i++){
+    // map_string += cname_map[i] + ","
+    // }
     sh """sed -e 's/cname_map_value/${map_string}/' main.tf 
         terraform fmt main.tf
     """
