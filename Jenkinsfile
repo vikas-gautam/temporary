@@ -19,7 +19,10 @@ def assignVariable(){
     for (i=0;i<cname_map.size();i++){
     map_string += cname_map[i]+","
     }
-    sh """sed -e 's/cname_map_value/${map_string}/' main.tf """
+    sh """sed -e 's/cname_map_value/${map_string}/' main.tf 
+        terraform fmt main.tf
+    """
+
     
 
 }
