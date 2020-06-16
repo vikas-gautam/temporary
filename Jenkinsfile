@@ -13,7 +13,7 @@ node{
 def assignVariableToMap(){
     def cname_map = ""
     for (i=0;i<cname_subdomain_list.size();i++){
-    cname_map += cname_subdomain_list[i] + "=" + cname_subdomain_map[i] +","
+    cname_map += (cname_subdomain_list[i] + "=" + cname_subdomain_map[i]).join(",")
     }
     print cname_map
     //String map_string = cname_map.join(",")
