@@ -19,7 +19,7 @@ def assignVariable(){
     for (i=0;i<cname_map.size();i++){
     map_string += cname_map[i]+","
     }
-    print map_string
+    sh """sed -e 's/cname_map_value/${map_string}/' main.tf """
     
 
 }

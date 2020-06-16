@@ -15,7 +15,6 @@ module "paytm_bank_dns" {
    }
 
   cname_subdomain_map = {
-    "www" =  "www.google.com",
-    "abc" = "abc.google.com"
+    cname_map_value
   }
 }
