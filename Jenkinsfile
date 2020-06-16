@@ -13,7 +13,7 @@ node{
 def assignVariable(){
     def cname_map = [:]
     for (i=0;i<cname_subdomain_list.size();i++){
-    cname_map1 = cname_map.add(cname_subdomain_list[i] + '=' + cname_subdomain_map [i])
+    cname_map1 = cname_map.add($cname_subdomain_list[i] + '=' + $cname_subdomain_map[i])
     }
     print cname_map1
 
