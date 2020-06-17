@@ -6,7 +6,7 @@ terraform {
   backend "s3" {
     bucket = "devmarvel"
     key    = "terraform_key.tfstate"
-    region = "us-east-1"
+    region = "ap-south-1"
   }
 }
 module "paytm_bank_dns" {
