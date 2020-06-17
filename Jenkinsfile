@@ -31,7 +31,7 @@ node{
         def a_map=listToMap(a_subdomain_list,a_records_ip)
 
         // call funct to assign varible in main.tf
-        assign_Tf_Vars(cname_subdomain_list,cname_map,"A_record")
+        assign_Tf_Vars(a_subdomain_list,a_map,"A_record")
         
     }
 
