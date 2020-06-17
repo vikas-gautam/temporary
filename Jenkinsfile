@@ -7,7 +7,7 @@ node{
 
     stage('Zone entry in main tf'){
         //reading yaml file
-        zone_file = sh(returnStdout: true, script: "echo ${zone_name} | tr '.' '_'" , returnStdout: true)
+        zone_file = sh(script: "echo ${zone_name} | tr '.' '_'" , returnStdout: true)
         println "file" + zone_file+".yaml"
         file = readYaml file: "${zone_file}.yaml"
         println "Zone Name:- " + zone_name
