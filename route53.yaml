@@ -1,0 +1,16 @@
+---
+cname_subdomain_list:
+  - www
+  - bank
+  - upi
+  - middleware
+cname_domain_records:
+  - www.google.com
+  - www.paytmbank.com
+  - www.paytmbank.com
+a_subdomain_list:
+  - www
+  - bank
+a_records_ip:
+  - 10.110.242.111
+  - 10.110.242.112
