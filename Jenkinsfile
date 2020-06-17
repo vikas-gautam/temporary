@@ -17,6 +17,7 @@ node{
         println "a_records_ip"+a_records_ip 
 
     }
+
 //     stage("change the variable"){
 //         cname_subdomain_list = "${cname_subdomain_list}".split(',')
 //         sh """sed -e 's/cname_domain_value_list/${cname_subdomain_list}/' main.tf """
@@ -33,4 +34,4 @@ node{
 //     }
 //     String map_string = cname_map.join(",")
 //     sh """sed -e 's/cname_map_value/${map_string}/' main.tf """
-// }
+ }
