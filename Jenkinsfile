@@ -9,7 +9,7 @@ node{
         //reading yaml file
         zone_file = sh(script: "echo ${zone_name} | tr '.' '_'" , returnStdout: true)
         zone_file = zone_file.trim()
-        println "file" + zone_file+".yaml"
+        println zone_file+".yaml"
         file = readYaml file: "${zone_file}.yaml"
         println "Zone Name:- " + zone_name
         sh""" sed -i 's/zone_name/${zone_name}/' main.tf """

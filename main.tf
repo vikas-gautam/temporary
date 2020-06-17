@@ -5,7 +5,7 @@ provider "aws" {
 
 module "paytm_bank_dns" {
   source               = "./route53"
-  domain               = zone_name
+  domain               = "zone_name"
   organization         = "paytmbank"
   a_subdomain_list     = a_domain_value_list
   cname_subdomain_list = cname_domain_value_list
