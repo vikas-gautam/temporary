@@ -13,6 +13,7 @@ node{
         file = readYaml file: "${zone_file}.yaml"
         println "Zone Name:- " + zone_name
         sh""" sed -i 's/zone_name/${zone_name}/' main.tf """
+        sh""" sed -i 's/terraform_key/terraform_${zone_file}/' main.tf """
     }
 
     stage('setting cname records'){
