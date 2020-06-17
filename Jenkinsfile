@@ -4,7 +4,7 @@ node{
     }
     stage("varibale interchange"){
 
-        def file = readYaml file: "./${location}/route53.yaml"
+        def file = readYaml file: "route53.yaml"
         cname_subdomain_list = file["cname_subdomain_list"]
         println "cname_subdomain_list"+cname_subdomain_list 
         cname_domain_records = file["cname_domain_records"]
