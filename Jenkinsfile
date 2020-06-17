@@ -43,19 +43,20 @@ node{
 def listToMap(list,record){
     def map_value = []
     for (i=0;i<list.size();i++){
-    map_value += list[i] + "=" + '"'+record[i]+'"'
+    map_value += '"'+list[i]+'"' + "=" + '"'+record[i]+'"'
     }
     String map_string = map_value.join(",")
     return map_string
  }
  def assign_Tf_Vars(list,map,type){
 
+     n_list = list
      if (type=="A_record"){
-        sh """sed -i 's/a_domain_value_list/${list}/' main.tf """
+        sh """sed -i 's/a_domain_value_list/${n_list}/' main.tf """
         sh """sed -i 's/a_record_map_value/${map}/' main.tf """
      }
      else{
-         sh """sed -i 's/cname_domain_value_list/${list}/' main.tf """
+         sh """sed -i 's/cname_domain_value_list/${n_list}/' main.tf """
         sh """sed -i 's/cname_map_value/${map}/' main.tf """
      }
  }
