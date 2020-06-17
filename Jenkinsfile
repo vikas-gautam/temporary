@@ -34,6 +34,9 @@ node{
         assign_Tf_Vars(a_subdomain_list,a_map,"A_record")
         
     }
+    stage('tf apply'){
+        sh """ terraform init && terraform plan && terrform apply -auto-approve """
+    }
 
 }
 
@@ -48,11 +51,11 @@ def listToMap(list,record){
  def assign_Tf_Vars(list,map,type){
 
      if (type=="A_record"){
-        sh """sed -e 's/a_domain_value_list/${list}/' main.tf """
-        sh """sed -e 's/a_record_map_value/${map}/' main.tf """
+        sh """sed -i 's/a_domain_value_list/${list}/' main.tf """
+        sh """sed -i 's/a_record_map_value/${map}/' main.tf """
      }
      else{
-         sh """sed -e 's/cname_domain_value_list/${list}/' main.tf """
-        sh """sed -e 's/cname_map_value/${map}/' main.tf """
+         sh """sed -i 's/cname_domain_value_list/${list}/' main.tf """
+        sh """sed -i 's/cname_map_value/${map}/' main.tf """
      }
  }
