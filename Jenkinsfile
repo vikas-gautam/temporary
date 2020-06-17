@@ -43,7 +43,7 @@ node{
 def listToMap(list,record){
     def map_value = []
     for (i=0;i<list.size();i++){
-    map_value += list[i] + "=" + record[i] 
+    map_value += '"'+list[i]+'"' + "=" + '"'+record[i]+'"'
     }
     String map_string = map_value.join(",")
     return map_string

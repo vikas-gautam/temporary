@@ -11,7 +11,8 @@ module "paytm_bank_dns" {
   cname_subdomain_list = cname_domain_value_list
 
   a_subdomain_map = { 
-   a_record_map_value
+   //a_record_map_value
+   
    }
 
   cname_subdomain_map = {
