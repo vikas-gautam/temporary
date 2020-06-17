@@ -1,14 +1,12 @@
 ---
 cname_subdomain_list:
-  - www
   - bank
   - upi
   - middleware
 cname_domain_records:
-  - www.google.com
-  - www.paytmbank.com
-  - www.paytmbank.com
-  - mw.bank.co
+  - bank.paytmbank.com
+  - upi.paytmbank.com
+  - mw.paytmbank.com
 a_subdomain_list:
   - www
   - bank
