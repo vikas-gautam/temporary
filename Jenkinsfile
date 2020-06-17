@@ -7,7 +7,7 @@ node{
 
     stage('setting cname records'){
 
-        cname_subdomain_list = file["cname_subdomain_list"]
+        cname_subdomain_list = list_converter(file["cname_subdomain_list"])
         println "cname_subdomain_list:" + cname_subdomain_list 
         cname_domain_records = file["cname_domain_records"]
         println "cname_domain_records:" + cname_domain_records 
@@ -21,12 +21,11 @@ node{
 
     stage("setting A records"){
    
-        a_subdomain_list = file["a_subdomain_list"]
-        println "a_subdomain_list:" + a_subdomain_list 
-
+        a_subdomain_list = list_converter(file["a_subdomain_list"])
         a_records_ip = file["a_records_ip"]
         println "a_records_ip:" + a_records_ip 
 
+        
         // conversion of list to map 
         def a_map=listToMap(a_subdomain_list,a_records_ip)
 
@@ -43,20 +42,25 @@ node{
 def listToMap(list,record){
     def map_value = []
     for (i=0;i<list.size();i++){
-    map_value += '"'+list[i]+'"' + "=" + '"'+record[i]+'"'
+    map_value += list[i] + "=" + '"'+record[i]+'"'
     }
     String map_string = map_value.join(",")
     return map_string
  }
  def assign_Tf_Vars(list,map,type){
 
-     n_list = list
      if (type=="A_record"){
-        sh """sed -i 's/a_domain_value_list/${n_list}/' main.tf """
+        sh """sed -i 's/a_domain_value_list/${list}/' main.tf """
         sh """sed -i 's/a_record_map_value/${map}/' main.tf """
      }
      else{
-         sh """sed -i 's/cname_domain_value_list/${n_list}/' main.tf """
+         sh """sed -i 's/cname_domain_value_list/${list}/' main.tf """
         sh """sed -i 's/cname_map_value/${map}/' main.tf """
      }
+ }
+ def list_converter(list){
+     for i in list{
+         comma_enclosed_domain_list += '"'+list[i]+'"'
+     }
+     return comma_enclosed_domain_list
  }
