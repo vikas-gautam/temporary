@@ -8,8 +8,8 @@ cname_domain_records:
   - upi.paytmbank.com
   - mw.paytmbank.com
 a_subdomain_list:
-  - www
-  - bank
+  - www1
+  - bank1
 a_records_ip:
   - 10.110.242.111,10.110.342.45,10.110.55.33
   - 10.110.242.11
