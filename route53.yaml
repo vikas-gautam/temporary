@@ -2,9 +2,11 @@
 cname_subdomain_list:
   - bank
   - upi
+  - www
 cname_domain_records:
   - bank.paytmbank.com
   - upi.paytmbank.com
+  - www.google.com
 a_subdomain_list:
   - www1
   - bank1
