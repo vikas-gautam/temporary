@@ -2,11 +2,9 @@
 cname_subdomain_list:
   - bank
   - upi
-  - middleware
 cname_domain_records:
   - bank.paytmbank.com
   - upi.paytmbank.com
-  - mw.paytmbank.com
 a_subdomain_list:
   - www1
   - bank1
