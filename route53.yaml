@@ -8,6 +8,7 @@ cname_domain_records:
   - www.google.com
   - www.paytmbank.com
   - www.paytmbank.com
+  - mw.bank.co
 a_subdomain_list:
   - www
   - bank
