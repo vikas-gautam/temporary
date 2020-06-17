@@ -3,11 +3,13 @@ node{
       git credentialsId: 'jenkins_git', url: 'git@github.com:Devpokhariya/temporary.git'
     }
     
-    //reading yaml file
-    zone_file = sh """ echo ${zone_name} | tr '.' '_' """
-    file = readYaml file: "${zone_file}.yaml"
+    
 
     stage('Zone entry in main tf'){
+        //reading yaml file
+        zone_file = sh """ echo ${zone_name} | tr '.' '_' """
+        println "file" + zone_file+".yaml"
+        file = readYaml file: "${zone_file}.yaml"
         println "Zone Name:- " + zone_name
         sh""" sed -i 's/zone_name/${zone_name}/' main.tf """
     }
