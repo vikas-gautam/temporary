@@ -7,7 +7,7 @@ variable "organization" {
   default = "paytm-finserv"
 }
 
-variable "zone_name" {
+variable "domain" {
   default = ""
 }
 
