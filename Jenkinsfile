@@ -59,7 +59,7 @@ def listToMap(list,record){
      }
  }
  def list_converter(list){
-     for (i=0;i<list;i++){
+     for (i=0;i<list.size();i++){
          comma_enclosed_domain_list += '"'+list[i]+'"'
      }
      return comma_enclosed_domain_list
