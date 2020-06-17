@@ -13,27 +13,20 @@ variable "domain" {
 
 variable "cname_subdomain_list" {
   type = list
-  default = []
 }
 
 variable "cname_subdomain_map" {
   type = map
-  default = {}
 
 }
 
 
 variable "a_subdomain_list" {
   type = list
-  default = []
-
 }
 
 variable "a_subdomain_map" {
   type = map
-  default = {}
-
-
 }
 
 
