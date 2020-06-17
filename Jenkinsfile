@@ -31,7 +31,7 @@ node{
         sh """sed -e 's/a_record_map_value/${map_string}/' main.tf """
     }
 
-
+}
 def assignVariableToMap(list,record){
     def map_value = []
     for (i=0;i<list.size();i++){
