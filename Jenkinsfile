@@ -10,7 +10,7 @@ node{
         cname_domain_records = file["cname_domain_records"]
         println "cname_domain_records:" + cname_domain_records 
 
-        assignVariableToMap(cname_subdomain_list,cname_domain_records)
+        def map_string=assignVariableToMap(cname_subdomain_list,cname_domain_records)
         
         sh """sed -e 's/cname_domain_value_list/${cname_subdomain_list}/' main.tf """
         sh """sed -e 's/cname_map_value/${map_string}/' main.tf """
@@ -25,7 +25,7 @@ node{
         a_records_ip = file["a_records_ip"]
         println "a_records_ip:" + a_records_ip 
 
-        assignVariableToMap(a_subdomain_list,a_records_ip)
+         def map_string=assignVariableToMap(a_subdomain_list,a_records_ip)
         
         sh """sed -e 's/a_domain_value_list/${a_subdomain_list}/' main.tf """
         sh """sed -e 's/a_record_map_value/${map_string}/' main.tf """
