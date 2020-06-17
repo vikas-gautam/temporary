@@ -3,7 +3,11 @@ node{
       git credentialsId: 'jenkins_git', url: 'git@github.com:Devpokhariya/temporary.git'
     }
     //reading yaml file
-    file = readYaml file: "route53.yaml"
+    file = readYaml file: "paytm_com.yaml"
+    stage('Zone entry in main tf'){
+        println "Zone Name:- " + zone_name
+        sh""" sed -i 's/zone_name/${zone_name}/' main.tf """
+    }
 
     stage('setting cname records'){
 

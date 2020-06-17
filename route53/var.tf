@@ -7,8 +7,8 @@ variable "organization" {
   default = "paytm-finserv"
 }
 
-variable "domain" {
-  default = "paytmpb.io"
+variable "zone_name" {
+  default = ""
 }
 
 variable "cname_subdomain_list" {
