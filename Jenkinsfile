@@ -1,4 +1,6 @@
 node{
+    properties([[$class: 'RebuildSettings', autoRebuild: false, rebuildDisabled: false], parameters([string(defaultValue: 'paytmbank.com', description: 'Zone name', name: 'zone_name', trim: true)])])
+    
     stage("clone"){
       git credentialsId: 'jenkins_git', url: 'https://github.com/vikas-gautam/temporary.git'
     }
