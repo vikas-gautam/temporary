@@ -1,6 +1,6 @@
 node{
     stage("clone"){
-      git credentialsId: 'jenkins_git', url: 'git@github.com:Devpokhariya/temporary.git'
+      git credentialsId: 'jenkins_git', url: 'git@github.com:vikas-gautam/temporary.git'
     }
     
     
