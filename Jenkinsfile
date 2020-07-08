@@ -14,8 +14,8 @@ node{
         println zone_file+".yaml"
         file = readYaml file: "${zone_file}.yaml"
         println "Zone Name:- " + zone_name
-        sh""" sed -i 's/zone_name/${zone_name}/' main.tf """
-        sh""" sed -i 's/terraform_key/terraform_${zone_file}/' main.tf """
+        sh""" sed -i "" 's/zone_name/${zone_name}/' main.tf """
+        sh""" sed -i "" 's/terraform_key/terraform_${zone_file}/' main.tf """
     }
 
     stage('setting cname records'){
@@ -63,12 +63,12 @@ def listToMap(list,record){
  def assign_Tf_Vars(list,map,type){
 
      if (type=="A_record"){
-        sh """sed -i 's/a_domain_value_list/${list}/' main.tf """
-        sh """sed -i 's/a_record_map_value/${map}/' main.tf """
+        sh """sed -i "" 's/a_domain_value_list/${list}/' main.tf """
+        sh """sed -i "" 's/a_record_map_value/${map}/' main.tf """
      }
      else{
-         sh """sed -i 's/cname_domain_value_list/${list}/' main.tf """
-        sh """sed -i 's/cname_map_value/${map}/' main.tf """
+         sh """sed -i "" 's/cname_domain_value_list/${list}/' main.tf """
+        sh """sed -i "" 's/cname_map_value/${map}/' main.tf """
      }
  }
  def list_converter(list){
