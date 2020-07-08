@@ -47,7 +47,7 @@ node{
         
     }
     stage('tf apply'){
-        sh """ terraform init && terraform plan && terraform apply -auto-approve """
+        sh """ /usr/local/bin/terraform init && /usr/local/bin/terraform plan && /usr/local/bin/terraform apply -auto-approve """
     }
 
 }
