@@ -1,7 +1,7 @@
 provider "aws" {
   region = "ap-south-1"
   version = "~> 2.63"
-  profile = "default"
+  profile = "poc"
 }
 terraform {
   backend "s3" {
