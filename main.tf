@@ -3,13 +3,13 @@ provider "aws" {
   version = "~> 2.63"
   profile = "poc"
 }
-#terraform {
-#  backend "s3" {
-#    bucket = "poc-route53"
-#    key    = "terraform_key.tfstate"
-#    region = "ap-south-1"
-#  }
-#}
+terraform {
+  backend "s3" {
+    bucket = "poc-route53"
+    key    = "terraform_key.tfstate"
+    region = "ap-south-1"
+  }
+}
 module "paytm_bank_dns" {
   source               = "./route53"
   domain               = "zone_name"
