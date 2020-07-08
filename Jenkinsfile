@@ -47,7 +47,7 @@ node{
         
     }
     stage('tf apply'){
-        sh """ export AWS_PROFILE = default && /usr/local/bin/terraform init && /usr/local/bin/terraform plan && /usr/local/bin/terraform apply -auto-approve """
+        sh """ export AWS_PROFILE=default && /usr/local/bin/terraform init && /usr/local/bin/terraform plan && /usr/local/bin/terraform apply -auto-approve """
     }
 
 }
