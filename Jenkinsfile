@@ -2,7 +2,7 @@ node{
     properties([parameters([string(defaultValue: 'paytmbank.com', description: 'pass zone name', name: 'zone_name', trim: false)])])
     
     stage("clone"){
-      git credentialsId: 'jenkins_git', url: 'https://github.com/vikas-gautam/temporary.git'
+      git branch: 'mac-branch', credentialsId: 'jenkins_git', url: 'https://github.com/vikas-gautam/temporary.git'
     }
     
     
