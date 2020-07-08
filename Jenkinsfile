@@ -1,5 +1,5 @@
 node{
-    properties([parameters([string(defaultValue: 'paytmbank.com', description: 'pass zone name', name: 'zone_name', trim: false)])])
+    properties([parameters([string(defaultValue: 'paytmbank.com', description: 'pass zone name that you want to CREATE,UPDATE,DELETE and yaml file should be present for that zone name', name: 'zone_name', trim: false)])])
     
     stage("clone"){
       git branch: 'mac-branch', credentialsId: 'jenkins_git', url: 'https://github.com/vikas-gautam/temporary.git'
