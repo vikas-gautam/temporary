@@ -2,9 +2,11 @@
 cname_subdomain_list:
   - mall
   - upi
+  - middleware
 cname_domain_records:
   - mall.paytmbank.com
   - upi.paytmbank.com
+  - awsloadblancer.com
 a_subdomain_list:
   - www1
   - bank1
