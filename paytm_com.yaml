@@ -1,9 +1,9 @@
 ---
 cname_subdomain_list:
-  - bank
+  - mall
   - upi
 cname_domain_records:
-  - bank.paytmbank.com
+  - mall.paytmbank.com
   - upi.paytmbank.com
 a_subdomain_list:
   - www1
