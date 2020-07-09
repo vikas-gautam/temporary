@@ -47,7 +47,7 @@ node{
         
     }
     stage('terraform plan'){
-        sh """ /usr/local/bin/terraform init && /usr/local/bin/terraform plan && /usr/local/bin/terraform apply -auto-approve """
+        sh """ export AWS_PROFILE=poc && /usr/local/bin/terraform init && /usr/local/bin/terraform plan """
     }
 
     def userInput = input(
@@ -56,7 +56,7 @@ node{
               ])
     if (userInput){
         stage('terraform apply'){
-        sh """ /usr/local/bin/terraform apply -auto-approve """
+        sh """ export AWS_PROFILE=poc && /usr/local/bin/terraform apply -auto-approve """
        }
     }
 }
