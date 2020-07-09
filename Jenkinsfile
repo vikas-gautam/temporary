@@ -46,9 +46,19 @@ node{
         assign_Tf_Vars(a_subdomain_list,a_map,"A_record")
         
     }
-    stage('tf apply'){
+    stage('terraform plan'){
         sh """ /usr/local/bin/terraform init && /usr/local/bin/terraform plan && /usr/local/bin/terraform apply -auto-approve """
     }
+
+    def userInput = input(
+                  id: 'userInputForterraformApply', message: "tf plan is successful. Let\'s promote to apply changes?", parameters: [
+                  [$class: 'BooleanParameterDefinition', defaultValue: false, description: "Going to make changes in infrastructure", name: 'Terraform apply',
+              ])
+    if (userInput){
+        stage('terraform apply'){
+        sh """ /usr/local/bin/terraform apply -auto-approve """
+       }
+    }          
 
 }
 
