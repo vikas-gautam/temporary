@@ -12,7 +12,7 @@ node{
         zone_file = sh(script: "echo ${zone_name} | tr '.' '_'" , returnStdout: true)
         zone_file = zone_file.trim()
         println zone_file+".yaml"
-        file = readYaml file: "${zone_file}.yaml"
+        file = readYaml file: zone_files/"${zone_file}.yaml"
         println "Zone Name:- " + zone_name
         sh""" sed -i "" 's/zone_name/${zone_name}/' main.tf """
         sh""" sed -i "" 's/terraform_key/terraform_${zone_file}/' main.tf """
@@ -51,8 +51,8 @@ node{
     }
 
     def userInput = input(
-                  id: 'userInputForterraformApply', message: "tf plan is successful. Let\'s promote to apply changes?", parameters: [
-                  [$class: 'BooleanParameterDefinition', defaultValue: false, description: "Going to make changes in infrastructure", name: 'Terraform apply']
+                  id: 'userInputForterraformApply', message: "Going to apply changes in route53 ?", parameters: [
+                  [$class: 'BooleanParameterDefinition', defaultValue: false, description: "check the box and click proceed or abort", name: 'Terraform apply']
               ])
     if (userInput){
         stage('terraform apply'){
