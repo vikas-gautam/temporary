@@ -2,9 +2,8 @@ node{
     properties([parameters([string(defaultValue: 'paytmbank.com', description: 'pass zone name', name: 'zone_name', trim: false)])])
     
     stage("clone"){
-      git branch: 'mac-branch', credentialsId: 'jenkins_git', url: 'https://github.com/vikas-gautam/temporary.git'
+      git branch: 'delete-poc', credentialsId: 'jenkins_git', url: 'https://github.com/vikas-gautam/temporary.git'
     }
-    
     
 
     stage('Zone entry in main tf'){
@@ -12,7 +11,7 @@ node{
         zone_file = sh(script: "echo ${zone_name} | tr '.' '_'" , returnStdout: true)
         zone_file = zone_file.trim()
         println zone_file+".yaml"
-        file = readYaml file: zone_files/"${zone_file}.yaml"
+        file = readYaml file: "zone_files/${zone_file}.yaml"
         println "Zone Name:- " + zone_name
         sh""" sed -i "" 's/zone_name/${zone_name}/' main.tf """
         sh""" sed -i "" 's/terraform_key/terraform_${zone_file}/' main.tf """
